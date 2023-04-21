@@ -1,0 +1,20 @@
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Java + Loom early access build
+    steps:
+      - uses: actions/checkout@v3
+      - name: setup
+        uses: oracle-actions/setup-java@v1
+        with:
+          website: jdk.java.net
+          release: 21
+      - name: build
+        run: |
+          mvn -B verify
