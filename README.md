@@ -13,6 +13,10 @@ mvn spring-boot:run
 mvn spring-boot:run -Dspring-boot.run.profiles=loom
 http://localhost:8080/swagger-ui/index.html
 
+time curl -X 'GET' \
+  'http://localhost:8080/api/v1/req1?latency=1' \
+  -H 'accept: application/json'
+
 #docker
 ./docker-build.sh
 docker images
