@@ -11,6 +11,7 @@ Visit the section about [Requirements](./docs/requirements/README.md) for furthe
 sdk env install
 mvn spring-boot:run
 mvn spring-boot:run -Dspring-boot.run.profiles=loom
+http://localhost:8080/swagger-ui/index.html
 
 #docker
 ./docker-build.sh
