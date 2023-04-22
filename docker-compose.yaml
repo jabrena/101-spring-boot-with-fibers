@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+
+  service-default:
+    image: jab/service:0.1.0-SNAPSHOT
+    ports:
+      - "8001:8000"
+
+  service-loom:
+    image: jab/service:0.1.0-SNAPSHOT
+    environment:
+      - "SPRING_PROFILES_ACTIVE=loom"
+    ports:
+      - "8002:8000"
